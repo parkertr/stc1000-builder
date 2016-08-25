@@ -1,0 +1,34 @@
+ul#program-tabs.tabs(data-tabs)
+    li.tabs-title.is-active
+        a(href="#panel0" aria-selected="true") Program 0
+    li.tabs-title
+        a(href="#panel1") Program 1
+    li.tabs-title
+        a(href="#panel2") Program 2
+    li.tabs-title
+        a(href="#panel3") Program 3
+    li.tabs-title
+        a(href="#panel4") Program 4
+    li.tabs-title
+        a(href="#panel5") Program 5
+
+include components/fermentationProgram.jade
+
+div.tabs-content(data-tabs-content="program-tabs")
+    div#panel0.is-active.tabs-panel(data-tabs-content="program-tabs")
+        +fermentationProgram(0)
+    div#panel1.tabs-panel(data-tabs-content="program-tabs")
+        +fermentationProgram(1)
+    div#panel2.tabs-panel(data-tabs-content="program-tabs")
+        +fermentationProgram(2)
+        p Pro Two
+        p What
+    div#panel3.tabs-panel(data-tabs-content="program-tabs")
+        p Pro Three
+        p What
+    div#panel4.tabs-panel(data-tabs-content="program-tabs")
+        p Pro Four
+        p What
+    div#panel5.tabs-panel(data-tabs-content="program-tabs")
+        p Pro Five
+        p What
