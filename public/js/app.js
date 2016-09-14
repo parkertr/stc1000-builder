@@ -40,6 +40,7 @@
       this._temp = temp;
       this._time = time;
       this._ramp = ramp;
+      this._element = null;
     }
 
     Step.prototype.ramp = function() {
@@ -54,6 +55,10 @@
       return this._time;
     };
 
+    Step.prototype.element = function() {
+      return this._element;
+    };
+
     Step.prototype.setRamp = function(ramp) {
       return this._ramp = ramp;
     };
@@ -64,6 +69,11 @@
 
     Step.prototype.setTime = function(time) {
       return this._time = time;
+    };
+
+    Step.prototype.setElement = function(element) {
+      this._element = element;
+      return console.log(element);
     };
 
     return Step;
@@ -134,6 +144,7 @@
         d.val(step.time());
         t.data('step', step);
         d.data('step', step);
+        step.setElement(s);
         t.change((function(_this) {
           return function(e) {
             var input;

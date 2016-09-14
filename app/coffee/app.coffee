@@ -15,18 +15,24 @@ class Step
         @_temp = temp
         @_time = time
         @_ramp = ramp
+        @_element = null
     ramp: ->
         @_ramp
     temp: ->
         @_temp
     time: ->
         @_time
+    element: ->
+        @_element
     setRamp: (ramp) ->
         @_ramp = ramp
     setTemp: (temp) ->
         @_temp = temp
     setTime: (time) ->
         @_time = time
+    setElement: (element) ->
+        @_element = element
+        console.log element
 
 class Program
     constructor: (number, output, holdBeforeStart=true, rampDegPerMin=1) ->
@@ -62,6 +68,8 @@ class Program
             d.val(step.time())
             t.data('step', step)
             d.data('step', step)
+
+            step.setElement s
 
             t.change (e) =>
                 input = $(e.target)
