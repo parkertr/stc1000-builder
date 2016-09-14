@@ -1,3 +1,5 @@
+include components/mashStep.jade
+
 ul#program-tabs.tabs(data-tabs)
     li.tabs-title.is-active
         a(href="#panel0" aria-selected="true") Program 0
@@ -16,9 +18,9 @@ include components/fermentationProgram.jade
 
 div.tabs-content(data-tabs-content="program-tabs")
     div#panel0.is-active.tabs-panel(data-tabs-content="program-tabs")
-        +fermentationProgram(0)
+        .program(data-program=0)
     div#panel1.tabs-panel(data-tabs-content="program-tabs")
-        +fermentationProgram(1)
+        .program(data-program=1)
     div#panel2.tabs-panel(data-tabs-content="program-tabs")
         +fermentationProgram(2)
         p Pro Two

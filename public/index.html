@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Jobs</title>
     <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/icons/foundation-icons.css">
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
@@ -19,6 +20,23 @@
     <div class="row">
       <div class="small-1 columns"></div>
       <div class="small-10 columns">
+        <div class="hide">
+          <div id="stepTemplate" class="row">
+            <div class="small-6 large-2 columns">
+              <div class="input-group">
+                <input type="number" step="0.1" min="0.0" name="temp" value="" class="input-group-field"><span class="input-group-label">°C</span>
+              </div>
+            </div>
+            <div class="small-6 large-2 columns">
+              <div class="input-group">
+                <input type="number" min="0" name="duration" value="" class="input-group-field"><span class="input-group-label">min</span>
+              </div>
+            </div>
+            <div class="small-12 large-8 columns">
+              <div class="button-group"><a title="Hold at constant temperature for duration then ramp to next step." class="button secondary active"><i></i><span>Constant temp.</span></a><a title="Raise temperature gradually over the duration to the next step." class="button secondary"><i></i><span>Ramp</span></a></div>
+            </div>
+          </div>
+        </div>
         <ul id="program-tabs" data-tabs class="tabs">
           <li class="tabs-title is-active"><a href="#panel0" aria-selected="true">Program 0</a></li>
           <li class="tabs-title"><a href="#panel1">Program 1</a></li>
@@ -29,71 +47,15 @@
         </ul>
         <div data-tabs-content="program-tabs" class="tabs-content">
           <div id="panel0" data-tabs-content="program-tabs" class="is-active tabs-panel">
-                    <div data-program-number='0' data-step-number='0' class="stepTemplate text-left">
-                      <div class="row">
-                        <div class="small-6 large-2 columns">
-                          <div class="input-group">
-                            <input type="number" step="0.1" min="0.0" name="temperature" value="66.6" class="input-group-field"><span class="input-group-label">°C</span>
-                          </div>
-                        </div>
-                        <div class="small-6 large-2 columns">
-                          <div class="input-group">
-                            <input type="number" min="0" name="duration" value="60" class="input-group-field"><span class="input-group-label">min</span>
-                          </div>
-                        </div>
-                        <div class="small-12 large-8 columns">
-                          <input type="checkbox" name="ramp" id="stR" class="middle">
-                          <label for="stR" class="middle">Ramp</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="small-12 large-12 columns"><a href="#" data-next-step='1' class="addStepButton button">+ Add Step</a></div>
-                      </div>
-                    </div>
+            <div data-program='0' class="program"></div>
           </div>
           <div id="panel1" data-tabs-content="program-tabs" class="tabs-panel">
-                    <div data-program-number='1' data-step-number='0' class="stepTemplate text-left">
-                      <div class="row">
-                        <div class="small-6 large-2 columns">
-                          <div class="input-group">
-                            <input type="number" step="0.1" min="0.0" name="temperature" value="66.6" class="input-group-field"><span class="input-group-label">°C</span>
-                          </div>
-                        </div>
-                        <div class="small-6 large-2 columns">
-                          <div class="input-group">
-                            <input type="number" min="0" name="duration" value="60" class="input-group-field"><span class="input-group-label">min</span>
-                          </div>
-                        </div>
-                        <div class="small-12 large-8 columns">
-                          <input type="checkbox" name="ramp" id="stR" class="middle">
-                          <label for="stR" class="middle">Ramp</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="small-12 large-12 columns"><a href="#" data-next-step='1' class="addStepButton button">+ Add Step</a></div>
-                      </div>
-                    </div>
+            <div data-program='1' class="program"></div>
           </div>
           <div id="panel2" data-tabs-content="program-tabs" class="tabs-panel">
-                    <div data-program-number='2' data-step-number='0' class="stepTemplate text-left">
+                    <div class="fermentationProgram text-left">
                       <div class="row">
-                        <div class="small-6 large-2 columns">
-                          <div class="input-group">
-                            <input type="number" step="0.1" min="0.0" name="temperature" value="66.6" class="input-group-field"><span class="input-group-label">°C</span>
-                          </div>
-                        </div>
-                        <div class="small-6 large-2 columns">
-                          <div class="input-group">
-                            <input type="number" min="0" name="duration" value="60" class="input-group-field"><span class="input-group-label">min</span>
-                          </div>
-                        </div>
-                        <div class="small-12 large-8 columns">
-                          <input type="checkbox" name="ramp" id="stR" class="middle">
-                          <label for="stR" class="middle">Ramp</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="small-12 large-12 columns"><a href="#" data-next-step='1' class="addStepButton button">+ Add Step</a></div>
+                        <div class="small-12 large-12 columns"><a href="#" data-program='2' data-step='0' class="addStepButton button">+ Add Step</a></div>
                       </div>
                     </div>
             <p>Pro Two</p>

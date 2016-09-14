@@ -1,13 +1,18 @@
-.row.hide#stepTemplate
-    .small-6.large-2.columns
-        .input-group
-            input.input-group-field(type="number" step="0.1" min="0.0" name="temperature")
-            span.input-group-label °C
-    .small-6.large-2.columns
-        .input-group.float-left
-            input.input-group-field(type="number" step="0.1" min="0.0" name="duration")
-            span.input-group-label min
-    .small-12.large-8.columns.text-left
-        .show
-            input(type="checkbox" name="ramp" id="stR")
-            label(for="stR") Ramp
+.hide
+    .row#stepTemplate
+        .small-6.large-2.columns
+            .input-group
+                input.input-group-field(type="number" step="0.1" min="0.0" name="temp" value="")
+                span.input-group-label °C
+        .small-6.large-2.columns
+            .input-group
+                input.input-group-field(type="number" min="0" name="duration" value="")
+                span.input-group-label min
+        .small-12.large-8.columns
+            .button-group
+                a.button.secondary.active(title="Hold at constant temperature for duration then ramp to next step.")
+                    i
+                    span Constant temp.
+                a.button.secondary(title="Raise temperature gradually over the duration to the next step.")
+                    i
+                    span Ramp
